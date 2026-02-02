@@ -11,39 +11,164 @@ body{margin:0;font-family:'Georgia',serif;background:#fff7fb;color:#333}
 html{scroll-behavior:smooth}
 
 /* NAV */
-.topbar{background:#ffffffcc;backdrop-filter:blur(10px);position:sticky;top:0;z-index:999;border-bottom:1px solid rgba(0,0,0,.06)}
-.topbar-inner{max-width:1100px;margin:auto;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;gap:14px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#333}
-.brand img{height:46px;border-radius:10px}
-.nav{display:flex;gap:10px;flex-wrap:wrap}
-.nav a{text-decoration:none;font-weight:bold;background:#fff;border:1px solid rgba(0,0,0,.08);padding:10px 14px;border-radius:25px;box-shadow:0 6px 14px rgba(0,0,0,.06);color:#333}
+.topbar{
+  background:#ffffffcc;
+  backdrop-filter:blur(10px);
+  position:sticky;
+  top:0;
+  z-index:999;
+  border-bottom:1px solid rgba(0,0,0,.06)
+}
+.topbar-inner{
+  max-width:1100px;
+  margin:auto;
+  padding:14px 18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  text-decoration:none;
+  color:#333
+}
+.brand img{
+  height:70px; /* LOGO MADE BIGGER */
+  border-radius:12px
+}
+.nav{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap
+}
+.nav a{
+  text-decoration:none;
+  font-weight:bold;
+  background:#fff;
+  border:1px solid rgba(0,0,0,.08);
+  padding:10px 16px;
+  border-radius:25px;
+  box-shadow:0 6px 14px rgba(0,0,0,.06);
+  color:#333
+}
 
-header{background:linear-gradient(135deg,#f7c1d9,#e6b3ff);padding:60px 20px;text-align:center}
-header h1{font-size:40px;margin:0 0 10px}
-header p{font-size:18px;margin:0}
+/* HERO */
+header{
+  background:linear-gradient(135deg,#f7c1d9,#e6b3ff);
+  padding:60px 20px;
+  text-align:center
+}
+header h1{
+  font-size:40px;
+  margin:0 0 10px
+}
+header p{
+  font-size:18px;
+  margin:0
+}
 
-section{padding:60px 20px;max-width:1000px;margin:auto}
-.card{background:#fff;border-radius:16px;padding:25px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
-.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-h2{text-align:center;font-size:32px;margin-bottom:20px;color:#cc5fa8}
-h3{color:#cc5fa8;margin-top:0}
-.price{font-size:22px;font-weight:bold}
-.btn{display:inline-block;margin-top:18px;padding:12px 24px;background:#cc5fa8;color:#fff;border-radius:25px;text-decoration:none;font-weight:bold}
-.btn.secondary{background:#fff;color:#cc5fa8;border:2px solid #cc5fa8}
+/* LAYOUT */
+section{
+  padding:60px 20px;
+  max-width:1000px;
+  margin:auto
+}
+.card{
+  background:#fff;
+  border-radius:16px;
+  padding:28px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08)
+}
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px
+}
+h2{
+  text-align:center;
+  font-size:34px;
+  margin-bottom:24px;
+  color:#cc5fa8
+}
+h3{
+  color:#cc5fa8;
+  margin-top:0
+}
+.price{
+  font-size:22px;
+  font-weight:bold
+}
+.btn{
+  display:inline-block;
+  margin-top:18px;
+  padding:12px 26px;
+  background:#cc5fa8;
+  color:#fff;
+  border-radius:25px;
+  text-decoration:none;
+  font-weight:bold
+}
+.btn.secondary{
+  background:#fff;
+  color:#cc5fa8;
+  border:2px solid #cc5fa8
+}
 
-.about-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:24px}
-@media(max-width:900px){.about-grid{grid-template-columns:1fr}}
-.about-photo{width:100%;border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,.1)}
+/* ABOUT */
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1.5fr;
+  gap:30px;
+  align-items:center /* ALIGN IMAGE + TEXT */
+}
+@media(max-width:900px){
+  .about-grid{grid-template-columns:1fr}
+}
+.about-photo{
+  width:100%;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,.1)
+}
+.about-text{
+  font-size:19px; /* TEXT MADE BIGGER */
+  line-height:1.85;
+}
 
-input,textarea{width:100%;padding:12px;border-radius:12px;border:1px solid rgba(0,0,0,.15);margin:8px 0;font-family:inherit}
+/* FORMS */
+input,textarea{
+  width:100%;
+  padding:12px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.15);
+  margin:8px 0;
+  font-family:inherit
+}
 
-footer{background:#f3cbe3;text-align:center;padding:30px 20px;font-size:14px}
+footer{
+  background:#f3cbe3;
+  text-align:center;
+  padding:30px 20px;
+  font-size:14px
+}
 
 /* Reviews */
-.stars span{font-size:28px;cursor:pointer;color:#e6b3ff}
-.stars span.active{color:#cc5fa8}
-.review{border:1px solid rgba(0,0,0,.1);border-radius:14px;padding:14px;margin-top:12px}
-.review img{max-width:100%;border-radius:12px;margin-top:10px}
+.stars span{
+  font-size:28px;
+  cursor:pointer;
+  color:#e6b3ff
+}
+.stars span.active{
+  color:#cc5fa8
+}
+.review{
+  border:1px solid rgba(0,0,0,.1);
+  border-radius:14px;
+  padding:14px;
+  margin-top:12px
+}
 </style>
 </head>
 
@@ -53,13 +178,13 @@ footer{background:#f3cbe3;text-align:center;padding:30px 20px;font-size:14px}
 <div class="topbar">
   <div class="topbar-inner">
     <a class="brand" href="#about">
-      <!-- LOGO -->
       <img src="Logo.png" alt="Kristen Bizzell Logo">
       <div>
         <strong>Kristen Bizzell</strong><br>
-        <span style="font-size:12px">Career • Finance • Tax Services</span>
+        <span style="font-size:13px">Career • Finance • Tax Services</span>
       </div>
     </a>
+
     <nav class="nav">
       <a href="#about">About</a>
       <a href="#career">Career Services</a>
@@ -81,16 +206,10 @@ footer{background:#f3cbe3;text-align:center;padding:30px 20px;font-size:14px}
   <div class="card">
     <h2>About</h2>
     <div class="about-grid">
-      <!-- PHOTO (UPDATED TO MATCH YOUR REAL FILE NAME) -->
       <img class="about-photo" src="Kristen%20S%202022%20(10).jpg" alt="Kristen Bizzell photo">
-      <p>
-        I was born in Fort Benning, Georgia, and now proudly call Searcy, Arkansas home.
-        I earned my Bachelor’s degree in Accounting from Colorado Technical University.
-        My passion has always been helping others feel confident and prepared in their
-        careers and financial lives. I specialize in practical, supportive services with
-        fast turnaround and affordability at the core. Every service I provide is built
-        on clarity, professionalism, and care — resulting in 100% customer satisfaction.
-      </p>
+      <div class="about-text">
+        I was born in Fort Benning, Georgia, and now proudly call Searcy, Arkansas home. I earned my Bachelor’s degree in Accounting from Colorado Technical University. My passion has always been helping others feel confident and prepared in their careers and financial lives. I specialize in practical, supportive services with fast turnaround and affordability at the core. Every service I provide is built on clarity, professionalism, and care — resulting in 100% customer satisfaction.
+      </div>
     </div>
   </div>
 </section>
@@ -167,21 +286,26 @@ Pay with Stripe
 
 <script>
 let rating=0;
-function rate(n){rating=n;document.querySelectorAll('.stars span').forEach((s,i)=>s.classList.toggle('active',i<n))}
+function rate(n){
+  rating=n;
+  document.querySelectorAll('.stars span')
+    .forEach((s,i)=>s.classList.toggle('active',i<n))
+}
 function saveReview(){
- if(!rating)return alert("Select stars");
- const text=document.getElementById('reviewText').value;
- const data=JSON.parse(localStorage.getItem('reviews')||'[]');
- data.push({rating,text,date:new Date().toLocaleString()});
- localStorage.setItem('reviews',JSON.stringify(data));render();
+  if(!rating)return alert("Select stars");
+  const text=document.getElementById('reviewText').value;
+  const data=JSON.parse(localStorage.getItem('reviews')||'[]');
+  data.push({rating,text,date:new Date().toLocaleString()});
+  localStorage.setItem('reviews',JSON.stringify(data));
+  render();
 }
 function render(){
- const data=JSON.parse(localStorage.getItem('reviews')||'[]');
- document.getElementById('reviewList').innerHTML=data.map(r=>`<div class="review"><strong>${"★".repeat(r.rating)}</strong><p>${r.text}</p><small>${r.date}</small></div>`).join('');
+  const data=JSON.parse(localStorage.getItem('reviews')||'[]');
+  document.getElementById('reviewList').innerHTML=
+    data.map(r=>`<div class="review"><strong>${"★".repeat(r.rating)}</strong><p>${r.text}</p><small>${r.date}</small></div>`).join('');
 }
 render();
 </script>
 
 </body>
 </html>
-
