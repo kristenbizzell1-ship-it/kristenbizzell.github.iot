@@ -1,4 +1,4 @@
-index.html
+index.html logo.png
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +12,62 @@ index.html
       background: #fff7fb;
       color: #333;
     }
+
+    /* NAV */
+    .topbar {
+      background: #ffffffcc;
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .topbar-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #333;
+    }
+    .brand img {
+      height: 46px;
+      width: auto;
+      display: block;
+      border-radius: 10px;
+    }
+    .brand strong {
+      font-size: 16px;
+      letter-spacing: 0.3px;
+    }
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+    .nav a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #333;
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,0.08);
+      padding: 10px 14px;
+      border-radius: 25px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+    }
+    .nav a:hover {
+      transform: translateY(-1px);
+    }
+
     header {
       background: linear-gradient(135deg, #f7c1d9, #e6b3ff);
       padding: 60px 20px;
@@ -24,6 +80,7 @@ index.html
     header p {
       font-size: 18px;
     }
+
     section {
       padding: 50px 20px;
       max-width: 1000px;
@@ -54,6 +111,7 @@ index.html
       font-weight: bold;
       margin: 10px 0;
     }
+
     .cta {
       text-align: center;
       padding: 60px 20px;
@@ -81,13 +139,40 @@ index.html
       text-decoration: none;
       font-weight: bold;
     }
+    .btn.secondary {
+      background: #ffffff;
+      color: #cc5fa8;
+      border: 2px solid #cc5fa8;
+      margin-left: 10px;
+    }
   </style>
 </head>
 <body>
 
+<!-- TOP NAV + LOGO -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="KB Empowering Your Path logo">
+      <div>
+        <strong>Kristen Bizzell</strong><br>
+        <span style="font-size:12px;">Career • Finance • Tax Services</span>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="tax-services.html">Tax Services</a>
+      <a href="booking.html">Booking</a>
+      <a href="payment.html">Payment</a>
+    </nav>
+  </div>
+</div>
+
 <header>
   <h1>Get Job Ready</h1>
-  <p>Affordable • Fast • Done‑For‑You Career & Money Support</p>
+  <p>Affordable • Fast • Done-For-You Career & Money Support</p>
 </header>
 
 <section>
@@ -96,7 +181,7 @@ index.html
     <div class="card">
       <h3>Resume Services</h3>
       <p class="price">$40–$50</p>
-      <p>ATS‑friendly resumes that get interviews. Perfect for new grads and career pivots.</p>
+      <p>ATS-friendly resumes that get interviews. Perfect for new grads and career pivots.</p>
     </div>
     <div class="card">
       <h3>Job Applications</h3>
@@ -106,7 +191,7 @@ index.html
     <div class="card">
       <h3>Budget & Money Reset</h3>
       <p class="price">$45+</p>
-      <p>Soft‑girl budgeting with bold, confident results.</p>
+      <p>Soft-girl budgeting with bold, confident results.</p>
     </div>
   </div>
 </section>
@@ -130,7 +215,7 @@ index.html
       <p>Personalized Budget • Expense Breakdown • Savings Plan</p>
     </div>
     <div class="card">
-      <h3>Life Admin Glow‑Up</h3>
+      <h3>Life Admin Glow-Up</h3>
       <p class="price">$150</p>
       <p>Career + Money Reset • 5 Applications • Goal Planning</p>
     </div>
@@ -138,24 +223,29 @@ index.html
 </section>
 
 <section>
-  <h2>➕ Add‑Ons</h2>
+  <h2>➕ Add-Ons</h2>
   <div class="card-grid">
     <div class="card">Cover Letter — $25</div>
     <div class="card">Extra Applications (2) — $20</div>
-    <div class="card">Same‑Day Service — $30</div>
+    <div class="card">Same-Day Service — $30</div>
     <div class="card">LinkedIn Optimization — $35</div>
   </div>
 </section>
 
 <div class="cta">
   <h2>Ready to Get Started?</h2>
-  <p>Email or DM to book your service</p>
+  <p>Email or book online to get started.</p>
   <a class="btn" href="mailto:kristen.bizzell1@gmail.com">Contact Me</a>
+  <a class="btn secondary" href="booking.html">Book Now</a>
 </div>
 
 <footer>
   <p>© 2026 Kristen Bizzell | Career & Money Concierge</p>
   <p>Payments Accepted: Apple Pay • Cash App</p>
+  <p style="margin-top:10px;">
+    <a href="tax-services.html" style="font-weight:bold;">Tax Services</a> •
+    <a href="payment.html" style="font-weight:bold;">Payment</a>
+  </p>
 </footer>
 
 </body>
