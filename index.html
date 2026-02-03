@@ -10,6 +10,12 @@ index.html logo.png about-photo.jpg
 body{margin:0;font-family:'Georgia',serif;background:#fff7fb;color:#333}
 html{scroll-behavior:smooth}
 
+/* ===== Mobile Friendly Defaults ===== */
+*{box-sizing:border-box}
+html,body{width:100%;overflow-x:hidden}
+img,video{max-width:100%;height:auto}
+button,input,select,textarea{font-size:16px} /* stops iPhone zoom */
+
 /* NAV */
 .topbar{
   background:#ffffffcc;
@@ -26,7 +32,8 @@ html{scroll-behavior:smooth}
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:16px
+  gap:16px;
+  position:relative;
 }
 .brand{
   display:flex;
@@ -53,6 +60,18 @@ html{scroll-behavior:smooth}
   border-radius:25px;
   box-shadow:0 6px 14px rgba(0,0,0,.06);
   color:#333
+}
+
+/* Mobile Menu Button */
+.menu-btn{
+  display:none;
+  padding:10px 12px;
+  border:1px solid rgba(0,0,0,.12);
+  background:#fff;
+  border-radius:12px;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 6px 14px rgba(0,0,0,.06);
 }
 
 /* HERO */
@@ -109,7 +128,9 @@ h3{
   color:#fff;
   border-radius:25px;
   text-decoration:none;
-  font-weight:bold
+  font-weight:bold;
+  cursor:pointer;
+  border:none;
 }
 .btn.secondary{
   background:#fff;
@@ -169,6 +190,47 @@ footer{
   padding:14px;
   margin-top:12px
 }
+
+/* ===== Mobile Tweaks ===== */
+@media (max-width: 768px){
+  header{padding:44px 16px}
+  header h1{font-size:30px}
+  header p{font-size:16px}
+
+  section{padding:44px 16px}
+  h2{font-size:26px}
+  .card{padding:18px}
+
+  .brand img{height:54px}
+  .menu-btn{display:inline-flex;align-items:center;gap:8px}
+
+  /* Turn your nav into a dropdown */
+  .nav{
+    display:none;
+    position:absolute;
+    right:18px;
+    top:74px;
+    width:min(320px, calc(100vw - 36px));
+    flex-direction:column;
+    gap:10px;
+    background:#fff;
+    border:1px solid rgba(0,0,0,.10);
+    border-radius:16px;
+    padding:12px;
+    box-shadow:0 14px 30px rgba(0,0,0,.12);
+  }
+  .nav.open{display:flex}
+  .nav a{border-radius:14px;text-align:center}
+
+  .about-text{font-size:16.5px;line-height:1.75}
+}
+
+/* Extra-small phones */
+@media (max-width: 420px){
+  .topbar-inner{padding:12px 14px}
+  .brand img{height:48px}
+  .btn{width:100%;text-align:center}
+}
 </style>
 </head>
 
@@ -185,7 +247,10 @@ footer{
       </div>
     </a>
 
-    <nav class="nav">
+    <!-- Mobile menu button (shows on phones) -->
+    <button class="menu-btn" aria-expanded="false" aria-controls="navLinks">☰ Menu</button>
+
+    <nav id="navLinks" class="nav">
       <a href="#about">About</a>
       <a href="#career">Career Services</a>
       <a href="#tax">Tax Services</a>
@@ -248,7 +313,7 @@ footer{
 <input placeholder="Name" required>
 <input placeholder="Email" required>
 <textarea placeholder="Service Needed"></textarea>
-<button class="btn">Send Request</button>
+<button class="btn" type="submit">Send Request</button>
 </form>
 </div>
 </section>
@@ -258,10 +323,10 @@ footer{
 <h2>Payment</h2>
 <div class="card">
 <p><strong>Cash App:</strong> $KristenStarr07</p>
-<a class="btn" href="https://cash.app/$KristenStarr07" target="_blank">Pay with Cash App</a>
+<a class="btn" href="https://cash.app/$KristenStarr07" target="_blank" rel="noopener">Pay with Cash App</a>
 
 <p style="margin-top:16px;"><strong>Pay with Card (Stripe)</strong></p>
-<a class="btn secondary" href="https://buy.stripe.com/7sYfZh9cx4pS3jpaDh0x200" target="_blank">
+<a class="btn secondary" href="https://buy.stripe.com/7sYfZh9cx4pS3jpaDh0x200" target="_blank" rel="noopener">
 Pay with Stripe
 </a>
 </div>
@@ -285,6 +350,25 @@ Pay with Stripe
 </footer>
 
 <script>
+/* Mobile nav toggle */
+const menuBtn = document.querySelector('.menu-btn');
+const navLinks = document.querySelector('#navLinks');
+
+if(menuBtn && navLinks){
+  menuBtn.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  // Close menu after clicking a link (better mobile UX)
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', ()=>{
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded','false');
+    });
+  });
+}
+
 let rating=0;
 function rate(n){
   rating=n;
