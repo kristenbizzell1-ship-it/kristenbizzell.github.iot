@@ -10,11 +10,17 @@ index.html logo.png about-photo.jpg
 body{margin:0;font-family:'Georgia',serif;background:#fff7fb;color:#333}
 html{scroll-behavior:smooth}
 
-/* ===== Mobile Friendly Defaults ===== */
+/* ===== GLOBAL MOBILE FIXES ===== */
 *{box-sizing:border-box}
 html,body{width:100%;overflow-x:hidden}
 img,video{max-width:100%;height:auto}
-button,input,select,textarea{font-size:16px} /* stops iPhone zoom */
+button,input,textarea{font-size:16px}
+
+/* 🔴 HIDE DIRECTORY LISTING TEXT 🔴 */
+body > pre,
+body > a:first-child {
+  display: none !important;
+}
 
 /* NAV */
 .topbar{
@@ -43,7 +49,7 @@ button,input,select,textarea{font-size:16px} /* stops iPhone zoom */
   color:#333
 }
 .brand img{
-  height:70px; /* LOGO MADE BIGGER */
+  height:70px;
   border-radius:12px
 }
 .nav{
@@ -62,7 +68,7 @@ button,input,select,textarea{font-size:16px} /* stops iPhone zoom */
   color:#333
 }
 
-/* Mobile Menu Button */
+/* Mobile Menu */
 .menu-btn{
   display:none;
   padding:10px 12px;
@@ -71,25 +77,16 @@ button,input,select,textarea{font-size:16px} /* stops iPhone zoom */
   border-radius:12px;
   font-weight:bold;
   cursor:pointer;
-  box-shadow:0 6px 14px rgba(0,0,0,.06);
 }
 
-/* HERO */
 header{
   background:linear-gradient(135deg,#f7c1d9,#e6b3ff);
   padding:60px 20px;
   text-align:center
 }
-header h1{
-  font-size:40px;
-  margin:0 0 10px
-}
-header p{
-  font-size:18px;
-  margin:0
-}
+header h1{font-size:40px;margin:0 0 10px}
+header p{font-size:18px;margin:0}
 
-/* LAYOUT */
 section{
   padding:60px 20px;
   max-width:1000px;
@@ -112,14 +109,8 @@ h2{
   margin-bottom:24px;
   color:#cc5fa8
 }
-h3{
-  color:#cc5fa8;
-  margin-top:0
-}
-.price{
-  font-size:22px;
-  font-weight:bold
-}
+h3{color:#cc5fa8;margin-top:0}
+.price{font-size:22px;font-weight:bold}
 .btn{
   display:inline-block;
   margin-top:18px;
@@ -129,21 +120,15 @@ h3{
   border-radius:25px;
   text-decoration:none;
   font-weight:bold;
-  cursor:pointer;
   border:none;
-}
-.btn.secondary{
-  background:#fff;
-  color:#cc5fa8;
-  border:2px solid #cc5fa8
+  cursor:pointer
 }
 
-/* ABOUT */
 .about-grid{
   display:grid;
   grid-template-columns:1fr 1.5fr;
   gap:30px;
-  align-items:center /* ALIGN IMAGE + TEXT */
+  align-items:center
 }
 @media(max-width:900px){
   .about-grid{grid-template-columns:1fr}
@@ -151,14 +136,12 @@ h3{
 .about-photo{
   width:100%;
   border-radius:16px;
-  box-shadow:0 10px 25px rgba(0,0,0,.1)
 }
 .about-text{
-  font-size:19px; /* TEXT MADE BIGGER */
+  font-size:19px;
   line-height:1.85;
 }
 
-/* FORMS */
 input,textarea{
   width:100%;
   padding:12px;
@@ -175,61 +158,22 @@ footer{
   font-size:14px
 }
 
-/* Reviews */
-.stars span{
-  font-size:28px;
-  cursor:pointer;
-  color:#e6b3ff
-}
-.stars span.active{
-  color:#cc5fa8
-}
-.review{
-  border:1px solid rgba(0,0,0,.1);
-  border-radius:14px;
-  padding:14px;
-  margin-top:12px
-}
-
-/* ===== Mobile Tweaks ===== */
-@media (max-width: 768px){
-  header{padding:44px 16px}
+/* Mobile */
+@media(max-width:768px){
   header h1{font-size:30px}
-  header p{font-size:16px}
-
-  section{padding:44px 16px}
   h2{font-size:26px}
-  .card{padding:18px}
-
-  .brand img{height:54px}
-  .menu-btn{display:inline-flex;align-items:center;gap:8px}
-
-  /* Turn your nav into a dropdown */
+  .menu-btn{display:inline-flex}
   .nav{
     display:none;
     position:absolute;
     right:18px;
     top:74px;
-    width:min(320px, calc(100vw - 36px));
     flex-direction:column;
-    gap:10px;
     background:#fff;
-    border:1px solid rgba(0,0,0,.10);
-    border-radius:16px;
     padding:12px;
-    box-shadow:0 14px 30px rgba(0,0,0,.12);
+    border-radius:16px;
   }
   .nav.open{display:flex}
-  .nav a{border-radius:14px;text-align:center}
-
-  .about-text{font-size:16.5px;line-height:1.75}
-}
-
-/* Extra-small phones */
-@media (max-width: 420px){
-  .topbar-inner{padding:12px 14px}
-  .brand img{height:48px}
-  .btn{width:100%;text-align:center}
 }
 </style>
 </head>
@@ -240,17 +184,16 @@ footer{
 <div class="topbar">
   <div class="topbar-inner">
     <a class="brand" href="#about">
-      <img src="Logo.png" alt="Kristen Bizzell Logo">
+      <img src="logo.png" alt="Kristen Bizzell Logo">
       <div>
         <strong>Kristen Bizzell</strong><br>
         <span style="font-size:13px">Career • Finance • Tax Services</span>
       </div>
     </a>
 
-    <!-- Mobile menu button (shows on phones) -->
-    <button class="menu-btn" aria-expanded="false" aria-controls="navLinks">☰ Menu</button>
+    <button class="menu-btn">☰ Menu</button>
 
-    <nav id="navLinks" class="nav">
+    <nav class="nav" id="navLinks">
       <a href="#about">About</a>
       <a href="#career">Career Services</a>
       <a href="#tax">Tax Services</a>
@@ -261,134 +204,10 @@ footer{
   </div>
 </div>
 
-<header>
-  <h1>Professional. Affordable. Fast.</h1>
-  <p>Career • Finance • Tax Support You Can Trust</p>
-</header>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="card">
-    <h2>About</h2>
-    <div class="about-grid">
-      <img class="about-photo" src="Kristen%20S%202022%20(10).jpg" alt="Kristen Bizzell photo">
-      <div class="about-text">
-        I was born in Fort Benning, Georgia, and now proudly call Searcy, Arkansas home. I earned my Bachelor’s degree in Accounting from Colorado Technical University. My passion has always been helping others feel confident and prepared in their careers and financial lives. I specialize in practical, supportive services with fast turnaround and affordability at the core. Every service I provide is built on clarity, professionalism, and care — resulting in 100% customer satisfaction.
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CAREER SERVICES -->
-<section id="career">
-<h2>Career Services</h2>
-<div class="card-grid">
-  <div class="card"><h3>Basic Resume Refresh</h3><p class="price">$40</p><p>Resume + Job Assessments<br>Custom Budget Plan</p></div>
-  <div class="card"><h3>Full Resume Rewrite</h3><p class="price">$50</p><p>3 Job Applications<br>Expense Breakdown</p></div>
-  <div class="card"><h3>Job Application</h3><p class="price">$20</p><p>Interview Tips</p></div>
-  <div class="card"><h3>Submissions</h3><p class="price">$70</p><p>Savings Strategy</p></div>
-  <div class="card"><h3>Career Reset</h3><p class="price">$120</p><p>Resume + Cover Letter<br>5 Job Applications<br>LinkedIn Boost</p></div>
-  <div class="card"><h3>Life Admin Glow-Up</h3><p class="price">$150</p><p>Resume + Budget Setup<br>5 Applications<br>Goal Worksheet</p></div>
-</div>
-</section>
-
-<!-- TAX -->
-<section id="tax">
-<h2>Tax Services</h2>
-<div class="card">
-<p>Basic Individual — $75</p>
-<p>W-2 + 1099 — $125</p>
-<p>Self-Employed — $175</p>
-<p>Amended Return — $100</p>
-<p>Prior Year — Starting $125</p>
-</div>
-</section>
-
-<!-- BOOKING -->
-<section id="booking">
-<h2>Booking</h2>
-<div class="card">
-<p>Calendly: https://calendly.com/your-calendly-link</p>
-<form action="mailto:kristen.bizzell1@gmail.com" method="post" enctype="text/plain">
-<input placeholder="Name" required>
-<input placeholder="Email" required>
-<textarea placeholder="Service Needed"></textarea>
-<button class="btn" type="submit">Send Request</button>
-</form>
-</div>
-</section>
-
-<!-- PAYMENT -->
-<section id="payment">
-<h2>Payment</h2>
-<div class="card">
-<p><strong>Cash App:</strong> $KristenStarr07</p>
-<a class="btn" href="https://cash.app/$KristenStarr07" target="_blank" rel="noopener">Pay with Cash App</a>
-
-<p style="margin-top:16px;"><strong>Pay with Card (Stripe)</strong></p>
-<a class="btn secondary" href="https://buy.stripe.com/7sYfZh9cx4pS3jpaDh0x200" target="_blank" rel="noopener">
-Pay with Stripe
-</a>
-</div>
-</section>
-
-<!-- REVIEWS -->
-<section id="reviews">
-<h2>Customer Reviews</h2>
-<div class="card">
-<div class="stars">
-<span onclick="rate(1)">★</span><span onclick="rate(2)">★</span><span onclick="rate(3)">★</span><span onclick="rate(4)">★</span><span onclick="rate(5)">★</span>
-</div>
-<textarea id="reviewText" placeholder="Leave a review"></textarea>
-<button class="btn" onclick="saveReview()">Submit</button>
-<div id="reviewList"></div>
-</div>
-</section>
-
-<footer>
-<p>© 2026 Kristen Bizzell | Career & Money Concierge</p>
-</footer>
-
 <script>
-/* Mobile nav toggle */
-const menuBtn = document.querySelector('.menu-btn');
-const navLinks = document.querySelector('#navLinks');
-
-if(menuBtn && navLinks){
-  menuBtn.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
-    menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
-
-  // Close menu after clicking a link (better mobile UX)
-  navLinks.querySelectorAll('a').forEach(a=>{
-    a.addEventListener('click', ()=>{
-      navLinks.classList.remove('open');
-      menuBtn.setAttribute('aria-expanded','false');
-    });
-  });
-}
-
-let rating=0;
-function rate(n){
-  rating=n;
-  document.querySelectorAll('.stars span')
-    .forEach((s,i)=>s.classList.toggle('active',i<n))
-}
-function saveReview(){
-  if(!rating)return alert("Select stars");
-  const text=document.getElementById('reviewText').value;
-  const data=JSON.parse(localStorage.getItem('reviews')||'[]');
-  data.push({rating,text,date:new Date().toLocaleString()});
-  localStorage.setItem('reviews',JSON.stringify(data));
-  render();
-}
-function render(){
-  const data=JSON.parse(localStorage.getItem('reviews')||'[]');
-  document.getElementById('reviewList').innerHTML=
-    data.map(r=>`<div class="review"><strong>${"★".repeat(r.rating)}</strong><p>${r.text}</p><small>${r.date}</small></div>`).join('');
-}
-render();
+const btn=document.querySelector('.menu-btn');
+const nav=document.querySelector('#navLinks');
+btn.onclick=()=>nav.classList.toggle('open');
 </script>
 
 </body>
