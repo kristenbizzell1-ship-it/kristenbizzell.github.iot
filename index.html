@@ -222,21 +222,21 @@ I genuinely love helping people feel confident, stress-free, and in control of t
 <img src="image1 (5).jpeg">
 <h3>Soft Girl Reset Workbook</h3>
 <p>$27</p>
-<a href="https://buy.stripe.com/7sYfZh9cx4pS3jpaDh0x200" class="button">Download</a>
+<a href="https://buy.stripe.com/14A8wPagB9Kc5rx5iX0x206" class="button">Download</a>
 </div>
 
 <div class="card">
 <img src="image2 (2).jpeg">
 <h3>Budget Planner</h3>
 <p>$17</p>
-<a href="https://buy.stripe.com/7sYfZh9cx4pS3jpaDh0x200" class="button">Download</a>
+<a href="https://buy.stripe.com/5kQ00jfAVe0s6vBbHl0x205" class="button">Download</a>
 </div>
 
 <div class="card">
 <img src="image0 (7).jpeg">
 <h3>Career Planner</h3>
 <p>$25</p>
-<a href="https://buy.stripe.com/7sYfZh9cx4pS3jpaDh0x200" class="button">Download</a>
+<a href="https://buy.stripe.com/eVq3cv1K51dG6vBh1F0x204" class="button">Download</a>
 </div>
 
 </div>
@@ -261,7 +261,7 @@ I genuinely love helping people feel confident, stress-free, and in control of t
 
 <p><strong>Cash App:</strong> $KristenStarr07</p>
 
-<a href="https://buy.stripe.com/7sYfZh9cx4pS3jpaDh0x200" class="button">Pay with Card (Stripe)</a>
+<a href="https://buy.stripe.com/7sYfZh9cx4pS3jpaDh0x200" class="button">Pay with Card</a>
 </section>
 
 <footer>
@@ -273,10 +273,14 @@ function addReview(){
     let name = document.getElementById("name").value;
     let review = document.getElementById("review").value;
 
-    let newReview = document.createElement("p");
-    newReview.innerHTML = "<strong>" + name + ":</strong> " + review;
+    if(name && review){
+        let newReview = document.createElement("p");
+        newReview.innerHTML = "<strong>" + name + ":</strong> " + review;
+        document.getElementById("reviewList").appendChild(newReview);
 
-    document.getElementById("reviewList").appendChild(newReview);
+        document.getElementById("name").value = "";
+        document.getElementById("review").value = "";
+    }
 }
 </script>
 
