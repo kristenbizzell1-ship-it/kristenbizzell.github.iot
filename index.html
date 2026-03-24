@@ -20,6 +20,7 @@ nav {
     gap:25px;
     padding:15px;
     border-bottom:2px solid gold;
+    flex-wrap:wrap;
 }
 
 nav a {
@@ -56,6 +57,7 @@ nav a {
     height:300px;
     object-fit:cover;
     border-radius:15px;
+    box-shadow:0 0 30px rgba(231,84,128,0.4);
 }
 
 /* BUTTON */
@@ -69,6 +71,7 @@ nav a {
     max-width:280px;
     text-decoration:none;
     font-weight:bold;
+    border:none;
 }
 
 /* LIST */
@@ -123,16 +126,18 @@ input,textarea {
 <h1>Helping You Get Your Life, Career & Money Together — Without the Stress</h1>
 </section>
 
-<!-- EMAIL -->
+<!-- EMAIL CAPTURE -->
 <section class="section">
+
 <h2>Get Your Free Guide 💕</h2>
 <p><strong>How to Fix Your Finances in 30 Days</strong></p>
 
 <input id="email" placeholder="Enter your email">
 <button class="button" onclick="sendEmail()">Get My Guide</button>
+
 </section>
 
-<!-- ABOUT (UPDATED) -->
+<!-- ABOUT -->
 <section class="section" id="about">
 
 <img src="profile.jpg" class="profile-img">
@@ -146,9 +151,7 @@ I was born in Fort Benning, Georgia, and I now reside in Searcy, Arkansas, where
 
 With my background in accounting and real-world experience, I am deeply passionate about helping individuals gain clarity, confidence, and control over their finances and career paths.<br><br>
 
-My mission is to simplify what often feels overwhelming — whether that’s navigating your finances, transitioning your career, or getting your taxes handled correctly — so you can move forward with confidence and peace of mind.<br><br>
-
-I believe everyone deserves access to guidance that is not only effective, but also affordable, supportive, and stress-free. I take pride in creating a welcoming experience for every client while delivering real results that make a difference in your everyday life.
+My mission is to simplify what often feels overwhelming so you can move forward with confidence and peace of mind. I believe everyone deserves access to guidance that is effective, affordable, and stress-free.
 </p>
 
 </section>
@@ -252,10 +255,12 @@ function sendEmail(){
         return;
     }
 
-    fetch("https://script.google.com/macros/s/AKfycbzsZEqC-zC67Bg5oJOR7-qfs7Ug610WLNJorW5rofHqKAhtYttiCwsPf0r7GNrjhbMj/exec",{
+    fetch("https://script.google.com/macros/s/AKfycbz0Cenui42YkdGNSircM1vJMv1d9eJ7L_zHZ9zRVV7ZXxsU3JMy9ELR8ovFt33W689s/exec",{
         method:"POST",
         body:JSON.stringify({email:email})
     });
+
+    alert("Check your email 💕");
 
     window.open("guide.pdf","_blank");
 }
