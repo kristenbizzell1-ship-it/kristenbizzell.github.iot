@@ -17,10 +17,11 @@ body {
 nav {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 25px;
     background: #fff;
     padding: 15px;
     border-bottom: 2px solid gold;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -38,20 +39,14 @@ nav a {
 .hero h1 {
     font-size: 34px;
     color: #e75480;
-    max-width: 700px;
+    max-width: 750px;
     margin: auto;
-}
-
-.hero p {
-    font-size: 18px;
-    margin-top: 10px;
 }
 
 .button {
     background: linear-gradient(45deg, gold, #e75480);
     color: white;
     padding: 12px 25px;
-    border: none;
     border-radius: 25px;
     text-decoration: none;
     display: inline-block;
@@ -67,7 +62,6 @@ nav a {
 
 .section h2 {
     color: #e75480;
-    margin-bottom: 20px;
 }
 
 /* CARDS */
@@ -94,13 +88,6 @@ nav a {
 .card img {
     width: 100%;
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(231, 84, 128, 0.2);
-}
-
-.price {
-    font-weight: bold;
-    color: #e75480;
-    margin-top: 10px;
 }
 
 /* FOOTER */
@@ -118,21 +105,39 @@ footer {
 <!-- NAV -->
 <nav>
     <a href="#home">Home</a>
+    <a href="#about">About</a>
     <a href="#services">Services</a>
+    <a href="#tax">Tax Services</a>
     <a href="#shop">Shop</a>
+    <a href="#reviews">Reviews</a>
     <a href="#contact">Contact</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="home">
     <h1>Helping You Get Your Life, Career & Money Together — Without the Stress</h1>
-    <p>Career • Finance • Tax Services</p>
     <a href="#services" class="button">Get Started</a>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+    <h2>About Me</h2>
+    <p>
+        Hi, I’m <strong>Kristen Bizzell</strong> 💕<br><br>
+        I was born in Fort Benning, Georgia, and I currently reside in Searcy, Arkansas — 
+        proudly providing services to clients all across the United States.
+        <br><br>
+        I graduated with my Bachelor’s of Science in Accounting and have a true passion for helping people 
+        feel confident, secure, and stress-free when it comes to their career and finances.
+        <br><br>
+        My goal is simple — to make your life easier, remove the confusion, and help you step into your next level 
+        with clarity and confidence.
+    </p>
 </section>
 
 <!-- SERVICES -->
 <section class="section" id="services">
-    <h2>Work With Me</h2>
+    <h2>Career Services</h2>
 
     <div class="card-container">
 
@@ -141,29 +146,36 @@ footer {
             <p>
                 ✔ Resume & Application Tracker<br>
                 ✔ 30-Day Email Supervision<br>
-                ✔ Job Application Follow-Up Emails
+                ✔ Job Application Follow-Up Emails<br>
+                ✔ Networking Strategies & Events<br>
+                ✔ LinkedIn Profile Optimization<br>
+                ✔ Business Card Guidance<br>
+                ✔ 10 Job Applications Submitted<br>
+                ✔ Personalized Transition Plan
             </p>
-            <p class="price">$150</p>
+            <p><strong>$150</strong></p>
         </div>
 
-        <div class="card">
-            <h3>Apply to Jobs For Me</h3>
-            <p>
-                ✔ 10 Job Applications<br>
-                ✔ Submission Tracking<br>
-                ✔ Stress-Free Process
-            </p>
-            <p class="price">$95</p>
-        </div>
+    </div>
+</section>
+
+<!-- TAX SERVICES -->
+<section class="section" id="tax">
+    <h2>Tax Services</h2>
+
+    <div class="card-container">
 
         <div class="card">
-            <h3>Resume Services</h3>
+            <img src="tax-service.jpg" alt="Tax Services">
+            <h3>Tax Preparation</h3>
             <p>
-                ✔ Resume Rewrite<br>
-                ✔ Formatting Fix<br>
-                ✔ Professional Optimization
+                ✔ Basic Individual Return — $75<br>
+                ✔ W-2 + 1099 — $125<br>
+                ✔ Self-Employed — $175<br>
+                ✔ Amended Returns — $100<br>
+                ✔ Prior Year Returns — Starting at $125
             </p>
-            <p class="price">Starting at $40</p>
+            <p>Stress-Free • Accurate • Reliable</p>
         </div>
 
     </div>
@@ -176,41 +188,47 @@ footer {
     <div class="card-container">
 
         <div class="card">
-            <img src="soft-girl-workbook.jpg" alt="Soft Girl Reset Workbook">
+            <img src="soft-girl-workbook.jpg">
             <h3>Soft Girl Reset Workbook</h3>
-            <p>Reset your mindset, confidence, and life with this powerful guided glow-up workbook.</p>
-            <p class="price">$27</p>
+            <p>Reset your mindset and confidence.</p>
+            <p><strong>$27</strong></p>
             <a href="YOUR-WORKBOOK-LINK" class="button">Download Now</a>
         </div>
 
         <div class="card">
-            <img src="budget-planner.jpg" alt="That Girl Budget Planner">
+            <img src="budget-planner.jpg">
             <h3>That Girl Budget Planner</h3>
-            <p>Take full control of your money with a luxury step-by-step budgeting system.</p>
-            <p class="price">$17</p>
-            <a href="YOUR-BUDGET-PLANNER-LINK" class="button">Download Now</a>
+            <p>Take control of your money.</p>
+            <p><strong>$17</strong></p>
+            <a href="YOUR-BUDGET-LINK" class="button">Download Now</a>
         </div>
 
         <div class="card">
-            <img src="career-planner.jpg" alt="Career Planner">
+            <img src="career-planner.jpg">
             <h3>Career Glow-Up Planner</h3>
-            <p>Plan your next move, stay organized, and secure your next opportunity with confidence.</p>
-            <p class="price">$25</p>
-            <a href="YOUR-CAREER-PLANNER-LINK" class="button">Download Now</a>
+            <p>Plan your next move with clarity.</p>
+            <p><strong>$25</strong></p>
+            <a href="YOUR-CAREER-LINK" class="button">Download Now</a>
         </div>
 
     </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+    <h2>Client Reviews</h2>
+    <p>“Kristen helped me land interviews within a week!” ⭐⭐⭐⭐⭐</p>
+    <p>“Super professional and made everything stress-free!” ⭐⭐⭐⭐⭐</p>
 </section>
 
 <!-- CONTACT -->
 <section class="section" id="contact">
     <h2>Contact</h2>
     <p>Email: kristen.bizzell1@gmail.com</p>
-    <p>Website: kbcareerservices.com</p>
     <p>Instagram: @bizzell.kristen</p>
+    <p>Website: kbcareerservices.com</p>
 </section>
 
-<!-- FOOTER -->
 <footer>
     <p>© KB Career Services | Empowering Your Path</p>
 </footer>
