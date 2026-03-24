@@ -10,13 +10,14 @@ body {
     margin:0;
     font-family:Georgia;
     background:#fff;
+    font-size:18px;
 }
 
 /* NAV */
 nav {
     display:flex;
     justify-content:center;
-    gap:20px;
+    gap:25px;
     padding:15px;
     border-bottom:2px solid gold;
 }
@@ -36,55 +37,58 @@ nav a {
 
 .hero h1 {
     color:#e75480;
+    font-size:32px;
 }
 
 /* SECTION */
 .section {
     margin:30px;
-    padding:60px 20px;
+    padding:70px 20px;
     border-radius:20px;
     background:radial-gradient(circle,#fff0f5,#fff);
-    box-shadow:0 0 30px rgba(231,84,128,0.15);
+    box-shadow:0 0 40px rgba(231,84,128,0.15);
     text-align:center;
 }
 
 /* PROFILE */
 .profile-img {
-    width:200px;
-    border-radius:50%;
+    width:300px;
+    height:300px;
+    object-fit:cover;
+    border-radius:15px;
 }
 
 /* BUTTON */
 .button {
     background:linear-gradient(45deg,gold,#e75480);
     color:white;
-    padding:12px;
+    padding:14px;
     border-radius:25px;
     display:block;
-    margin:10px auto;
-    max-width:250px;
+    margin:12px auto;
+    max-width:280px;
     text-decoration:none;
-    border:none;
+    font-weight:bold;
 }
 
 /* LIST */
 .bubble-list {
     list-style:none;
-    max-width:500px;
+    max-width:600px;
     margin:auto;
     text-align:left;
 }
 
 .bubble-list li {
-    padding-left:30px;
+    padding-left:35px;
+    margin:12px 0;
     position:relative;
-    margin:10px 0;
 }
 
 .bubble-list li::before {
     content:"";
-    width:12px;
-    height:12px;
+    width:14px;
+    height:14px;
     border-radius:50%;
     background:linear-gradient(45deg,gold,#e75480);
     position:absolute;
@@ -94,8 +98,8 @@ nav a {
 
 /* FORM */
 input,textarea {
-    width:80%;
-    padding:10px;
+    width:85%;
+    padding:12px;
     margin:10px 0;
 }
 </style>
@@ -103,7 +107,6 @@ input,textarea {
 
 <body>
 
-<!-- NAV -->
 <nav>
 <a href="#about">About</a>
 <a href="#services">Career</a>
@@ -114,89 +117,97 @@ input,textarea {
 <a href="#booking">Book</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
 <h1>Helping You Get Your Life, Career & Money Together — Without the Stress</h1>
 </section>
 
-<!-- EMAIL CAPTURE -->
 <section class="section">
-
 <h2>Get Your Free Guide 💕</h2>
-
-<p>How to Fix Your Finances in 30 Days</p>
-
 <input id="email" placeholder="Enter your email">
-
 <button class="button" onclick="sendEmail()">Get My Guide</button>
-
 </section>
 
-<!-- ABOUT -->
 <section class="section" id="about">
 <img src="profile.jpg" class="profile-img">
 
 <h2>About Me</h2>
 <p>
-Hi, I’m Kristen Bizzell 💕<br><br>
-Helping you feel confident and stress-free with your career and finances.
+Hi, I’m Kristen Bizzell 💕 helping you feel confident and stress-free with your finances and career.
 </p>
 </section>
 
-<!-- CAREER -->
 <section class="section" id="services">
 <h2>Career Services</h2>
 
 <ul class="bubble-list">
-<li>Resume & Application Tracker</li>
-<li>30-Day Email Supervision</li>
-<li>Job Follow-Ups</li>
+<li>Resume Creation & Optimization</li>
+<li>Job Application Assistance</li>
 <li>LinkedIn Optimization</li>
+<li>Interview Preparation</li>
+<li>Career Transition Strategy</li>
+<li>Networking Guidance</li>
+<li>Personalized Career Plan</li>
 </ul>
 
 <strong>Starting at $150</strong>
 </section>
 
-<!-- FINANCIAL -->
 <section class="section" id="financial">
 <h2>Financial Advising</h2>
 
 <ul class="bubble-list">
 <li>Financial Assessment</li>
 <li>Budget Planning</li>
-<li>Debt Management</li>
-<li>Investment Strategies</li>
+<li>Debt Payoff Strategy</li>
+<li>Credit Improvement</li>
+<li>Savings Plan</li>
+<li>Investment Guidance</li>
+<li>Biweekly Check-Ins</li>
 </ul>
 
 <strong>Starting at $150</strong>
 </section>
 
-<!-- TAX -->
+<!-- TAX (UPDATED WITH PRICES) -->
 <section class="section" id="tax">
 <h2>Tax Services</h2>
 
-<a href="https://buy.stripe.com/cNiaEXagB1dG6vBfXB0x207" class="button">Basic Return</a>
-<a href="https://buy.stripe.com/7sY9ATbkF09C2fl3aP0x203" class="button">W2 + 1099</a>
-<a href="https://buy.stripe.com/6oUfZh4Wh4pSbPVaDh0x202" class="button">Self-Employed</a>
-<a href="https://buy.stripe.com/8x29ATdsNf4w6vB6n10x201" class="button">Amended</a>
+<a href="https://buy.stripe.com/cNiaEXagB1dG6vBfXB0x207" class="button">
+Basic Return — $75
+</a>
+
+<a href="https://buy.stripe.com/7sY9ATbkF09C2fl3aP0x203" class="button">
+W2 + 1099 — $125
+</a>
+
+<a href="https://buy.stripe.com/6oUfZh4Wh4pSbPVaDh0x202" class="button">
+Self-Employed — $175
+</a>
+
+<a href="https://buy.stripe.com/8x29ATdsNf4w6vB6n10x201" class="button">
+Amended Return — $100
+</a>
+
+<a href="#" class="button">
+Prior Year Returns — Starting at $125
+</a>
+
 </section>
 
-<!-- SHOP -->
 <section class="section" id="shop">
 <h2>Shop</h2>
 
-<img src="workbook.jpg" width="200">
+<img src="workbook.jpg" width="250">
 <a href="https://buy.stripe.com/14A8wPagB9Kc5rx5iX0x206" class="button">Workbook</a>
 
-<img src="budget.jpg" width="200">
+<img src="budget.jpg" width="250">
 <a href="https://buy.stripe.com/5kQ00jfAVe0s6vBbHl0x205" class="button">Budget Planner</a>
 
-<img src="career.jpg" width="200">
+<img src="career.jpg" width="250">
 <a href="https://buy.stripe.com/eVq3cv1K51dG6vBh1F0x204" class="button">Career Planner</a>
 
 </section>
 
-<!-- REVIEWS -->
 <section class="section" id="reviews">
 <h2>Leave a Review</h2>
 
@@ -208,7 +219,6 @@ Helping you feel confident and stress-free with your career and finances.
 <div id="reviewList"></div>
 </section>
 
-<!-- BOOKING -->
 <section class="section" id="booking">
 <h2>Book & Pay</h2>
 
@@ -221,23 +231,19 @@ Pay with Card
 
 <script>
 function sendEmail(){
-    let email = document.getElementById("email").value;
+    let email=document.getElementById("email").value;
 
     if(!email){
         alert("Enter email 💕");
         return;
     }
 
-    fetch("https://script.google.com/macros/s/AKfycbzsZEqC-zC67Bg5oJOR7-qfs7Ug610WLNJorW5rofHqKAhtYttiCwsPf0r7GNrjhbMj/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbzsZEqC-zC67Bg5oJOR7-qfs7Ug610WLNJorW5rofHqKAhtYttiCwsPf0r7GNrjhbMj/exec",{
         method:"POST",
         body:JSON.stringify({email:email})
     });
 
-    alert("Guide opening 💕");
-
     window.open("guide.pdf","_blank");
-
-    document.getElementById("email").value="";
 }
 
 function addReview(){
