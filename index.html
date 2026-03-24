@@ -10,7 +10,7 @@
 body {
     margin: 0;
     font-family: 'Georgia', serif;
-    background: linear-gradient(to bottom, #ffe4ec, #fff);
+    background: #fff;
     color: #333;
 }
 
@@ -35,18 +35,35 @@ nav a {
 .hero {
     text-align: center;
     padding: 80px;
+    background: radial-gradient(circle, #ffe4ec, #fff);
 }
 
 .hero h1 {
     color: #e75480;
 }
 
-/* SECTION */
+/* SECTION WITH GLOW */
 .section {
-    padding: 50px;
+    padding: 60px 20px;
     text-align: center;
+    margin: 30px;
+    border-radius: 20px;
+    background: radial-gradient(circle at center, #fff0f5, #ffffff);
+    box-shadow: 0 0 40px rgba(231,84,128,0.15);
+    position: relative;
 }
 
+/* GOLD DIVIDER */
+.section::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 3px;
+    margin: 30px auto 0;
+    background: linear-gradient(to right, gold, #e75480);
+}
+
+/* HEADINGS */
 .section h2 {
     color: #e75480;
 }
@@ -55,14 +72,15 @@ nav a {
 .profile-img {
     width: 220px;
     border-radius: 50%;
-    box-shadow: 0 0 20px pink;
+    box-shadow: 0 0 30px rgba(231,84,128,0.4);
+    margin-bottom: 20px;
 }
 
 /* CARDS */
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap: 20px;
+    gap: 25px;
 }
 
 .card {
@@ -70,6 +88,7 @@ nav a {
     padding: 20px;
     border-radius: 15px;
     border-top: 3px solid gold;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 /* BUTTON */
@@ -87,31 +106,60 @@ nav a {
 
 .button:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(231,84,128,0.4);
 }
 
-/* SHOP */
+/* GRADIENT BUBBLES */
+.bubble-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    max-width: 500px;
+    margin: auto;
+}
+
+.bubble-list li {
+    margin: 12px 0;
+    position: relative;
+    padding-left: 30px;
+}
+
+.bubble-list li::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, gold, #e75480);
+    position: absolute;
+    left: 0;
+    top: 5px;
+    box-shadow: 0 0 10px rgba(231,84,128,0.5);
+}
+
+/* IMAGES */
 .card img {
     width: 100%;
     border-radius: 10px;
 }
 
-/* REVIEW */
+/* FORM */
 input, textarea {
     width: 100%;
     padding: 10px;
     margin: 5px 0;
+    border-radius: 10px;
+    border: 1px solid #ddd;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
 <a href="#home">Home</a>
 <a href="#about">About</a>
 <a href="#services">Career</a>
-<a href="#financial">Financial Advising</a>
+<a href="#financial">Financial</a>
 <a href="#tax">Tax</a>
 <a href="#shop">Shop</a>
 <a href="#reviews">Reviews</a>
@@ -119,68 +167,64 @@ input, textarea {
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="home">
+<section class="hero">
 <h1>Helping You Get Your Life, Career & Money Together — Without the Stress</h1>
 </section>
 
 <!-- ABOUT -->
-<section class="section" id="about">
-
+<section class="section">
 <img src="profile.jpg" class="profile-img">
 
 <h2>About Me</h2>
 <p>
 Hi, I’m Kristen Bizzell 💕<br><br>
-Born in Fort Benning, Georgia and now based in Searcy, Arkansas, serving clients nationwide.<br><br>
+Born in Fort Benning, Georgia and now based in Searcy, Arkansas.<br><br>
 I graduated from Colorado Technical University with my Bachelor’s of Science in Accounting.<br><br>
 I love helping people feel confident, stress-free, and in control of their career and finances.
 </p>
-
 </section>
 
-<!-- CAREER SERVICES -->
-<section class="section" id="services">
+<!-- CAREER -->
+<section class="section">
 <h2>Career Services</h2>
 
-<div class="card">
-✔ Resume & Application Tracker<br>
-✔ 30-Day Email Supervision<br>
-✔ Job Application Follow-Up Emails<br>
-✔ Networking Events Guidance<br>
-✔ LinkedIn Profile Optimization<br>
-✔ Business Cards Guidance<br>
-✔ 10 Job Applications Submitted<br>
-✔ Personalized Transition Plan<br><br>
+<ul class="bubble-list">
+<li>Resume & Application Tracker</li>
+<li>30-Day Email Supervision</li>
+<li>Job Application Follow-Up Emails</li>
+<li>Networking Events Guidance</li>
+<li>LinkedIn Profile Optimization</li>
+<li>Business Cards Guidance</li>
+<li>10 Job Applications Submitted</li>
+<li>Personalized Transition Plan</li>
+</ul>
 
 <strong>Starting at $150</strong>
-</div>
 </section>
 
-<!-- FINANCIAL ADVISING -->
-<section class="section" id="financial">
+<!-- FINANCIAL -->
+<section class="section">
 <h2>Financial Advising</h2>
 
-<div class="card">
-✔ Financial Assessment<br>
-✔ Personalized Financial Plan<br>
-✔ Budget Planning<br>
-✔ Wealth Management<br>
-✔ Debt Management<br>
-✔ Expense Optimization<br>
-✔ Investment Strategies<br>
-✔ Savings Strategies<br>
-✔ Biweekly Follow-Up Sessions<br><br>
+<ul class="bubble-list">
+<li>Financial Assessment</li>
+<li>Personalized Financial Plan</li>
+<li>Budget Planning</li>
+<li>Wealth Management</li>
+<li>Debt Management</li>
+<li>Expense Optimization</li>
+<li>Investment Strategies</li>
+<li>Savings Strategies</li>
+<li>Biweekly Follow-Up Sessions</li>
+</ul>
 
 <strong>Starting at $150</strong>
-</div>
 </section>
 
 <!-- TAX -->
-<section class="section" id="tax">
+<section class="section">
 
 <h2>Tax Services</h2>
-
-<div class="card">
 
 <a href="https://buy.stripe.com/cNiaEXagB1dG6vBfXB0x207" class="button">
 Basic Return — $75
@@ -202,12 +246,10 @@ Amended Return — $100
 Prior Year Returns — Starting at $125
 </a>
 
-</div>
-
 </section>
 
 <!-- SHOP -->
-<section class="section" id="shop">
+<section class="section">
 
 <h2>Shop</h2>
 
@@ -237,49 +279,6 @@ Prior Year Returns — Starting at $125
 </div>
 
 </section>
-
-<!-- REVIEWS -->
-<section class="section" id="reviews">
-
-<h2>Leave a Review</h2>
-
-<input id="name" placeholder="Your Name">
-<textarea id="review" placeholder="Your Review"></textarea>
-
-<button class="button" onclick="addReview()">Submit</button>
-
-<div id="reviewList"></div>
-
-</section>
-
-<!-- BOOK -->
-<section class="section" id="booking">
-
-<h2>Book & Pay</h2>
-
-<p><strong>Cash App:</strong> $KristenStarr07</p>
-
-<a href="https://buy.stripe.com/7sYfZh9cx4pS3jpaDh0x200" class="button">
-Pay with Card
-</a>
-
-</section>
-
-<script>
-function addReview(){
-    let name = document.getElementById("name").value;
-    let review = document.getElementById("review").value;
-
-    if(name && review){
-        let newReview = document.createElement("p");
-        newReview.innerHTML = "<strong>" + name + ":</strong> " + review;
-        document.getElementById("reviewList").appendChild(newReview);
-
-        document.getElementById("name").value = "";
-        document.getElementById("review").value = "";
-    }
-}
-</script>
 
 </body>
 </html>
