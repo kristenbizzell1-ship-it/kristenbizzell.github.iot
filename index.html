@@ -1,25 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KB Career Services</title>
+
+<style>
+body {
+    margin:0;
+    font-family:Georgia;
+    background:#fff;
+}
+
+/* NAV */
+nav {
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    padding:15px;
+    border-bottom:2px solid gold;
+}
+
+nav a {
+    color:#e75480;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* HERO */
+.hero {
+    text-align:center;
+    padding:80px;
+    background:radial-gradient(circle,#ffe4ec,#fff);
+}
+
+.hero h1 {
+    color:#e75480;
+}
+
+/* SECTION */
+.section {
+    margin:30px;
+    padding:60px 20px;
+    border-radius:20px;
+    background:radial-gradient(circle,#fff0f5,#fff);
+    box-shadow:0 0 30px rgba(231,84,128,0.15);
+    text-align:center;
+}
+
+/* PROFILE */
+.profile-img {
+    width:200px;
+    border-radius:50%;
+}
+
+/* BUTTON */
+.button {
+    background:linear-gradient(45deg,gold,#e75480);
+    color:white;
+    padding:12px;
+    border-radius:25px;
+    display:block;
+    margin:10px auto;
+    max-width:250px;
+    text-decoration:none;
+    border:none;
+}
+
+/* LIST */
+.bubble-list {
+    list-style:none;
+    max-width:500px;
+    margin:auto;
+    text-align:left;
+}
+
+.bubble-list li {
+    padding-left:30px;
+    position:relative;
+    margin:10px 0;
+}
+
+.bubble-list li::before {
+    content:"";
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:linear-gradient(45deg,gold,#e75480);
+    position:absolute;
+    left:0;
+    top:6px;
+}
+
+/* FORM */
+input,textarea {
+    width:80%;
+    padding:10px;
+    margin:10px 0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+<a href="#about">About</a>
+<a href="#services">Career</a>
+<a href="#financial">Financial</a>
+<a href="#tax">Tax</a>
+<a href="#shop">Shop</a>
+<a href="#reviews">Reviews</a>
+<a href="#booking">Book</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<h1>Helping You Get Your Life, Career & Money Together — Without the Stress</h1>
+</section>
+
+<!-- EMAIL CAPTURE -->
+<section class="section">
+
+<h2>Get Your Free Guide 💕</h2>
+
+<p>How to Fix Your Finances in 30 Days</p>
+
+<input id="email" placeholder="Enter your email">
+
+<button class="button" onclick="sendEmail()">Get My Guide</button>
+
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+<img src="profile.jpg" class="profile-img">
+
+<h2>About Me</h2>
+<p>
+Hi, I’m Kristen Bizzell 💕<br><br>
+Helping you feel confident and stress-free with your career and finances.
+</p>
+</section>
+
+<!-- CAREER -->
+<section class="section" id="services">
+<h2>Career Services</h2>
+
+<ul class="bubble-list">
+<li>Resume & Application Tracker</li>
+<li>30-Day Email Supervision</li>
+<li>Job Follow-Ups</li>
+<li>LinkedIn Optimization</li>
+</ul>
+
+<strong>Starting at $150</strong>
+</section>
+
+<!-- FINANCIAL -->
+<section class="section" id="financial">
+<h2>Financial Advising</h2>
+
+<ul class="bubble-list">
+<li>Financial Assessment</li>
+<li>Budget Planning</li>
+<li>Debt Management</li>
+<li>Investment Strategies</li>
+</ul>
+
+<strong>Starting at $150</strong>
+</section>
+
+<!-- TAX -->
+<section class="section" id="tax">
+<h2>Tax Services</h2>
+
+<a href="https://buy.stripe.com/cNiaEXagB1dG6vBfXB0x207" class="button">Basic Return</a>
+<a href="https://buy.stripe.com/7sY9ATbkF09C2fl3aP0x203" class="button">W2 + 1099</a>
+<a href="https://buy.stripe.com/6oUfZh4Wh4pSbPVaDh0x202" class="button">Self-Employed</a>
+<a href="https://buy.stripe.com/8x29ATdsNf4w6vB6n10x201" class="button">Amended</a>
+</section>
+
+<!-- SHOP -->
+<section class="section" id="shop">
+<h2>Shop</h2>
+
+<img src="workbook.jpg" width="200">
+<a href="https://buy.stripe.com/14A8wPagB9Kc5rx5iX0x206" class="button">Workbook</a>
+
+<img src="budget.jpg" width="200">
+<a href="https://buy.stripe.com/5kQ00jfAVe0s6vBbHl0x205" class="button">Budget Planner</a>
+
+<img src="career.jpg" width="200">
+<a href="https://buy.stripe.com/eVq3cv1K51dG6vBh1F0x204" class="button">Career Planner</a>
+
+</section>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+<h2>Leave a Review</h2>
+
+<input id="name" placeholder="Name">
+<textarea id="review" placeholder="Review"></textarea>
+
+<button class="button" onclick="addReview()">Submit</button>
+
+<div id="reviewList"></div>
+</section>
+
+<!-- BOOKING -->
+<section class="section" id="booking">
+<h2>Book & Pay</h2>
+
+<p>Cash App: $KristenStarr07</p>
+
+<a href="https://buy.stripe.com/7sYfZh9cx4pS3jpaDh0x200" class="button">
+Pay with Card
+</a>
+</section>
+
 <script>
 function sendEmail(){
     let email = document.getElementById("email").value;
 
     if(!email){
-        alert("Please enter your email 💕");
+        alert("Enter email 💕");
         return;
     }
 
-    // Send to Google Sheets
     fetch("https://script.google.com/macros/s/AKfycbzsZEqC-zC67Bg5oJOR7-qfs7Ug610WLNJorW5rofHqKAhtYttiCwsPf0r7GNrjhbMj/exec", {
-        method: "POST",
-        body: JSON.stringify({ email: email })
+        method:"POST",
+        body:JSON.stringify({email:email})
     });
 
-    // Success message
-    alert("You're in 💕 Your guide is downloading now!");
+    alert("Guide opening 💕");
 
-    // OPEN YOUR GUIDE (AUTO SEND)
-    window.open("30 Day Financial Glow Up Guide.pdf", "_blank");
+    window.open("guide.pdf","_blank");
 
-    // Clear field
-    document.getElementById("email").value = "";
+    document.getElementById("email").value="";
+}
+
+function addReview(){
+    let name=document.getElementById("name").value;
+    let review=document.getElementById("review").value;
+
+    if(name && review){
+        let p=document.createElement("p");
+        p.innerHTML="<strong>"+name+":</strong> "+review;
+        document.getElementById("reviewList").appendChild(p);
+    }
 }
 </script>
+
+</body>
+</html>
